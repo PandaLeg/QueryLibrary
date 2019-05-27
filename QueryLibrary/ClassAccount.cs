@@ -18,7 +18,7 @@ namespace QueryLibrary
         // Добавление
         public void insertAccount(string query, string connectionString, Account account)
         {
-            // // Переменная хранящая запрос
+            // Переменная хранящая запрос
             string sqlExpression = query;
             try
             {
@@ -165,6 +165,7 @@ namespace QueryLibrary
                     //создание и чтение строк
                 MySqlDataReader reader = command.ExecuteReader();
 
+                    // Цикл исходя из которого происходит чтение данных и значения из полей таблицы записываются в переменные(параметры)
                 while (reader.Read())
                 {
                         account.idAccount = Convert.ToInt32(reader["IdAccount"]);
@@ -183,7 +184,8 @@ namespace QueryLibrary
                         reader.Close();
                         connection.Close();
 
-                    }
+                }
+
                 }
                 catch (Exception ex)
                 {
@@ -193,6 +195,10 @@ namespace QueryLibrary
             }
         }
 
+
+        /*
+         * Метод под вопросом. Необходимы ли заново
+        */
         // Изменение
         public void updateAccount(string query, string connectionString, Account account)
         {
