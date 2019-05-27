@@ -13,7 +13,7 @@ namespace QueryLibrary
         public int idAccount;
         public string nickName;
         [Obsolete]
-        public string photo; // найти класс изображения и поменять 
+        public string photo;
         public string login;
         public string password;
         public string phoneNumber;
