@@ -45,9 +45,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassEmployeeSpecialty.cs" />
+    <Compile Include="ClassFavorites.cs" />
+    <Compile Include="ClassListEmployeeVacancy.cs" />
+    <Compile Include="ClassMessages.cs" />
+    <Compile Include="ClassReviews.cs" />
+    <Compile Include="ClassSpecialization.cs" />
+    <Compile Include="ClassTopVacancy.cs" />
+    <Compile Include="Enumerators\VacancyFormed.cs" />
+    <Compile Include="Enumerators\VacancyState.cs" />
+    <Compile Include="Tables\Account.cs" />
+    <Compile Include="Enumerators\AccountState.cs" />
+    <Compile Include="Enumerators\AccType.cs" />
     <Compile Include="ClassAccount.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ClassVacancy.cs" />
+    <Compile Include="Tables\EmployeeSpecialty.cs" />
+    <Compile Include="Tables\Favorites.cs" />
+    <Compile Include="Tables\ListEmployeeVacancy.cs" />
+    <Compile Include="Tables\Messages.cs" />
+    <Compile Include="Tables\Reviews.cs" />
+    <Compile Include="Tables\Specialization.cs" />
+    <Compile Include="Tables\TopVacancy.cs" />
+    <Compile Include="Tables\Vacancy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
