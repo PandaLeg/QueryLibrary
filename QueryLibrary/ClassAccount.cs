@@ -13,6 +13,9 @@ namespace QueryLibrary
         string message = "";
 
         /* 
+         * В запросе необходимо вместо конкретного значения указывать имя параметра, то есть (@IdAccount).
+         * Сам параметр уже хранит значение которое мы ему передали.
+         * 
         */
 
         // Добавление
@@ -34,8 +37,11 @@ namespace QueryLibrary
                     // Параметры для выполнения
                     MySqlParameter idAccountParam = new MySqlParameter
                     {
+                        // Имя
                         ParameterName = "@IdAccount",
+                        // Значение параметра
                         Value = account.idAccount,
+                        // Тип параметра
                         MySqlDbType = MySqlDbType.Int32
                     };
                     // Добавляем параметр
@@ -197,7 +203,9 @@ namespace QueryLibrary
 
 
         /*
-         * Метод под вопросом. Необходимы ли заново
+         * Метод под вопросом. Необходимо ли заново об'являть те же параметры и вносить в них свои значения для изменения или к примеру достаточно
+         * лишь присвоить параметру idAccount новое значение и с помощью запроса изменить данные.
+         * Если метод не функционирует, убрать полностью код начиная с 222 строки и заканчивая 326 ;
         */
         // Изменение
         public void updateAccount(string query, string connectionString, Account account)
@@ -338,8 +346,9 @@ namespace QueryLibrary
                 {
                     connection.Open();
                     MySqlCommand command = new MySqlCommand(sqlExpression, connection);
-                    // Добавить параметр @IdAcc, значение которого определяется переменной idAccount
+                    // Удаление будет происходить по id
                     command.Parameters.AddWithValue("@IdAccount", account.idAccount);
+                    // Выполняем sql - запрос
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
